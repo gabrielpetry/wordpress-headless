@@ -14,7 +14,8 @@ if ( is_singular() ) {
       )
   );
 } else {
-  header('Location: /wp-json/');
+  $apiUrl = get_site_url(null, '/wp-json/wp');
+  header("Location: {$apiUrl}");
 }
 
 die();
